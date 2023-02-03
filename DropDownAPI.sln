@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropDownAPI", "DropDownAPI\DropDownAPI.csproj", "{DBE6FC4D-0141-4623-B737-654A881057AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropDown", "DropDown\DropDown.csproj", "{9B77D0D5-60A3-4803-B21A-6B92BA23D084}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBE6FC4D-0141-4623-B737-654A881057AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE6FC4D-0141-4623-B737-654A881057AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE6FC4D-0141-4623-B737-654A881057AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE6FC4D-0141-4623-B737-654A881057AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B77D0D5-60A3-4803-B21A-6B92BA23D084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B77D0D5-60A3-4803-B21A-6B92BA23D084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B77D0D5-60A3-4803-B21A-6B92BA23D084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B77D0D5-60A3-4803-B21A-6B92BA23D084}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59279945-213D-4BC0-849A-97017B71EE22}
+	EndGlobalSection
+EndGlobal

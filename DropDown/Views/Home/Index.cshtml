@@ -1,0 +1,79 @@
+﻿<div class="div1 col-md-6">
+    <div class="form-group">
+        Select Country
+        <select asp="CountryID" id="CountryID" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        Select State
+        <select asp="StateID" id="StateID" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        Select District
+        <select asp="DistrictID" id="DistrictID" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="button" id="Save" value="Save" class="btn btn-success" />
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(window).on("load", function () {
+        GetAllCountry();
+    });
+
+    function GetAllCountry() {
+        $.getJSON("/Home/GetCountry", function (data) {
+            data = JSON.parse(data);
+            var C = "<option>Select One</option>";
+            $.each(data, function (i, C1) {
+                C += "<option value=" + C1.countryID + ">" + C1.countryName + "</option>";
+            });
+            $("#CountryID").html(C);
+        });
+    }
+
+    $(document).ready(function () {
+        $("#CountryID").change(function () {
+            var CountryID = $(this).val();
+            $("#StateID").empty();
+            $.getJSON("/Home/GetState", { CountryID: CountryID }, function (data) {
+                data = JSON.parse(data);
+                var S = "<option>Select One</option>";
+                $.each(data, function (i, S1) {
+                    S += "<option value=" + S1.stateID + ">" + S1.stateName + "</option>";
+                });
+                $("#StateID").html(S);
+            });
+        });
+
+        $("#StateID").change(function () {
+            var StateID = $(this).val();
+            $("#DistrictID").empty();
+            $.getJSON("/Home/GetDistrict", { StateID: StateID }, function (data) {
+                data = JSON.parse(data);
+                var D = "<option>Select One</option>";
+                $.each(data, function (i, D1) {
+                    D += "<option value=" + D1.districtID + ">" + D1.districtName + "</option>";
+                });
+                $("#DistrictID").html(D);
+            });
+        });
+        
+    })
+
+    $("#Save").click(function () {
+        var DD = {
+            CountryID: $("#CountryID").val(), StateID: $("#StateID").val(), DistrictID: $("#DistrictID").val()
+        };
+
+        $.post("/Home/Create", DD, function () {
+                alert("Data Inserted")
+                location.reload();
+        });
+    });
+</script>
